@@ -2,6 +2,7 @@
 set -ex
 . conf.properties
 
+rm -rf hazelcast
 git clone $hz_repository
 cd hazelcast
 git checkout $commit_sha
