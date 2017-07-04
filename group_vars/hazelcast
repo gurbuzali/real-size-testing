@@ -1,0 +1,4 @@
+hazelcast_jar: "hazelcast-all-3.9-SNAPSHOT.jar"
+hazelcast_home: "/opt/hazelcast"
+hazelcast_heap_size: 32G
+hazelcast_partition_count: 1600

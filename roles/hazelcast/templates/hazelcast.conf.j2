@@ -1,0 +1,3 @@
+description "Hazelcast"
+stop on shutdown
+exec java -Xmx{{hazelcast_heap_size}} -Xloggc:{{hazelcast_home}}/logs/hazelcast.gc.log -verbose:gc -XX:+PrintGCDateStamps -Dhazelcast.config={{hazelcast_home}}/config/hazelcast.xml -cp {{hazelcast_home}}/lib/* com.hazelcast.jet.server.StartServer > {{hazelcast_home}}/logs/hazelcast.log 2>&1

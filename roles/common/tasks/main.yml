@@ -1,0 +1,9 @@
+---
+ - name: Copy Java
+   copy: "src=~/{{java_rpm}} dest={{download_folder}}/"
+  
+ - name: Install Java
+   yum: 
+     name: "{{download_folder}}/{{java_rpm}}"
+     state: present
+     disablerepo: "*"  

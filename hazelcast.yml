@@ -1,0 +1,17 @@
+---
+- name: install-hazelcast
+  hosts: hazelcast
+  become: yes
+  roles:
+    - common
+    - hazelcast
+
+- name: start-hazelcast
+  hosts: hazelcast
+  become: yes
+
+  tasks:
+    - name: Start Hazelcast
+      service:
+        name: hazelcast
+        state: started

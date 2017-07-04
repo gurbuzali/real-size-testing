@@ -1,0 +1,4 @@
+package_home: /home/ec2-user
+download_folder: /opt/downloads
+java_home: /usr/java/latest
+java_rpm: "jdk-8u131-linux-x64.rpm"

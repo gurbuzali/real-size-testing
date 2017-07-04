@@ -1,0 +1,17 @@
+---
+- name: Copy Hazelcast
+  copy:
+    src: "{{package_home}}/{{hazelcast_jar}}"
+    dest: "{{hazelcast_home}}/lib"
+- name: Ensure log folder exists
+  file: path={{hazelcast_home}}/logs state=directory
+- name: Ensure config folder exists
+  file: path={{hazelcast_home}}/config state=directory
+- name: Configure Hazelcast
+  template:
+    src: hazelcast.xml.j2
+    dest: "{{hazelcast_home}}/config/hazelcast.xml"
+- name: Copy upstart
+  template:
+    src: hazelcast.conf.j2
+    dest: "/etc/init/hazelcast.conf"
